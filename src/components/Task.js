@@ -1,11 +1,10 @@
 import React from "react";
-import React, { useCallback } from "react";
 
-function Task() {
-function Task({ text, category, onDelete }) {
-  const handleDelete = useCallback(() => {
-    onDelete(text);
-  }, [onDelete, text]);
+function Task({ text, category, onDeleteTask }) {
+  function handleClick() {
+    onDeleteTask(text);
+  }
+
   return (
     <div className="task">
       <div className="label">CATEGORY HERE</div>
@@ -13,10 +12,11 @@ function Task({ text, category, onDelete }) {
       <button className="delete">X</button>
       <div className="label">{category}</div>
       <div className="text">{text}</div>
-      <button className="delete" onClick={handleDelete}>X</button>
+      <button onClick={handleClick} className="delete">
+        X
+      </button>
     </div>
   );
 }
-}
 
-export default Task
+export default Task;
