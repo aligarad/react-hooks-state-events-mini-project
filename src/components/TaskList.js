@@ -1,7 +1,6 @@
 import React from "react";
 import Task from "./Task";
 
-f
 function TaskList({ tasks, onDeleteTask }) {
   const taskList = tasks.map((task) => (
     <Task
